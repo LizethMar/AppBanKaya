@@ -25,7 +25,7 @@ import styles from './styles/styleFavoritos'
 export default function FavoritosPokemon() {
 
   const { pokemones } = useSelector(state => state.pokemonesReducer);
-  const [visibleModal,setVisibleModal] = React.useState(null);
+  const [visibleModal,setVisibleModal] = React.useState(false);
   const [isLoading,setIsLoading] = React.useState(true);
   const [informacionPokemon, setInformacionPokemon] = React.useState(Object);
   const [desHabilidad, setDesHabilidad] = React.useState('');
@@ -105,7 +105,7 @@ export default function FavoritosPokemon() {
                   <ActivityIndicator size="large" color="red" />
                 </> : 
       <ScrollView>
-        <TouchableOpacity style={styles.closeInfo} onPress={() => setVisibleModal(null) }>
+        <TouchableOpacity style={styles.closeInfo} onPress={() => setVisibleModal(false) }>
           <MaterialCommunityIcons name='close' color='black' size={50} />
         </TouchableOpacity>
         <Text style={styles.tituloInfo}>Información Pokémon</Text>
